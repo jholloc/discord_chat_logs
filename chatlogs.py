@@ -49,4 +49,4 @@ for (channel_name, channel_id) in channels:
         print('user,message', file=file)
         for message in messages[::-1]:
             content = ID_REGEX.sub(replace_userid, message['content'])
-            print('"%s","%s"' % (message['author']['username'], content), file=file)
+            print('"%s","%s"' % (message['author']['username'], content.replace('"', '""')), file=file)
